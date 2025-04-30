@@ -4,11 +4,11 @@ A continuación encontrará el código necesario apra medir la varibailidad de l
 
 Para la medición del HVR se hizo uso de la transformada Wavelet continua, se realizó el preprocesamiento de la señal para eliminar ruido, se ideintificaron los picos R, y se realizó el análisis tanto en el dominio del tiempo como en el dominio tiempo-frecuencia, posteriormente se identificó la dinámica en la señal cardíaca asociada a la actividad simpática y parasimpática del sistema nervioso autónomo, interpretando los resultados con base en los componentes espectrales de baja y alta frecuencia. 
 
-#Resultados
+# Resultados
 
-#Instrucción
+# Instrucción
 
-##Código para la adquisición de datos
+## Código para la adquisición de datos
 1. Se prepara y configura la señal inicial, se limpia el entorno de trabajo, se cierran los puertos seriales previamente abiertos y se configura el nuevo puerto serial para la captura de datos.
 
 ```python
