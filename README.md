@@ -6,6 +6,31 @@ Para la medición del HVR se hizo uso de la transformada Wavelet continua, se re
 
 # Resultados
 
+## Respuesta en frecuencia del filtro IIR
+![image](https://github.com/user-attachments/assets/926c7545-7ffc-4fc8-9072-1ca379b681ec)
+En esta imagen se observa la respuesta en frecuencia de un filtro IIR Butterworth pasabanda. Este tipo de filtro se caracteriza por presentar una respuesta suave y sin ondulaciones en la banda pasante, ideal para señales biomédicas, como lo es el caso de la señal ECG. El filtro diseñado permite el paso de frecuencias entre 0.5 Hz y 40 Hz, debido a que estas permiten eliminar el ruido generado por movimientos, fluctuaciones respiratorias o interferencia electromagnética. La ganancia dentro de la banda pasante es cercana a 0 dB, por lo cual las componentes útiles de la señal no se ven afectadas significativamente. Las pendientes pronunciadas fuera de la banda muestran una buena atenuación.
+## Análisis HRV
+![image](https://github.com/user-attachments/assets/60001634-f4af-4922-b0f7-8c5ff268ac97)
+En el primer gráfico se muestra la señal ECG filtrada, sobre la cual se destacan los picos R detectados que corresponden a los máximos del complejo QRS. La detección de estos picos es fundamental, ya que permiten calcular los intervalos RR, es decir, el tiempo que existe entre cada latido.
+
+En segundo gráfico representa los intervalos RR en el dominio del tiempo, mostrando su variabilidad latido a latido. La línea azul muestra cómo varía el tiempo entre latidos, mientras que la línea roja discontinua representa la media de los intervalos RR, que en este caso es de aproximadamente 844.65 ms. Esto sugiere una frecuencia cardíaca promedio cercana a 71 latidos por minuto, considerándose así normal. 
+
+Por último, el tercer gráfico presenta un análisis en el dominio del tiempo-frecuencia usando la transformada wavelet continua (CWT) aplicada a la señal HRV. Este gráfico permite observar cómo evoluciona la potencia espectral del HRV a lo largo de los latidos, se identifica claramente las bandas de interés fisiológico: la banda LF (Low Frequency, 0.04–0.15 Hz) asociada a actividad simpática y parasimpática, y la banda HF (High Frequency, 0.15–0.4 Hz) relacionada principalmente con la modulación parasimpática. El mapa de colores indica la magnitud de la potencia en cada frecuencia y momento, donde los colores cálidos indican mayor actividad. También se observa que hay modulación significativa en ambas bandas, sugiriendo una adecuada función autonóma.
+
+![image](https://github.com/user-attachments/assets/f69dc40f-2aac-452f-899c-2b82722ee47a)
+
+Los coeficientes proporcionados permiten expresar el filtro mediante su ecuación en diferencias, que describe cómo se calcula la salida actual 𝑦[𝑛] del sistema en función de entradas anteriores 
+𝑥[𝑛−𝑘] y salidas anteriores 𝑦[𝑛−𝑘]. La ecuación en diferencias obtenida muestra una combinación de coeficientes simétricos y ceros intercalados en los términos del numerador 𝑏, lo que contribuye a una respuesta más precisa y estable en la banda pasante. Por otro lado, los coeficientes del denominador 𝑎 indican una retroalimentación fuerte. Esta estructura proporciona un comportamiento eficiente para el procesamiento de señales biológicas para  conservar la morfología de la señal útil y eliminar el ruido.
+
+Los resultados obtenidos indican una media de los intervalos RR de 844.65 milisegundos, lo cual equivale a una frecuencia cardíaca aproximada de 71 latidos por minuto. Este valor se encuentra dentro del rango normal para una persona en estado de reposo.
+
+La desviación estándar de los intervalos RR, es de 185.09 ms. Este valor representa la variabilidad general del ritmo cardíaco durante el periodo analizado. Valores superiores a 100 ms suelen considerarse positivos.
+
+El RMSSD (raíz cuadrada de la media de las diferencias cuadráticas sucesivas entre intervalos RR) tiene un valor de 246.35 ms, que es notablemente alto. Este parámetro está asociado con la actividad del sistema parasimpático, el cual predomina en situaciones de reposo y relajación.
+
+El valor de pNN50, que indica el porcentaje de intervalos RR sucesivos que difieren en más de 50 ms, es de 79.58 %. Un resultado elevado, que se encuentra relacionado con individuos sanos.
+
+
 # Instrucción
 
 ## Código para la adquisición de datos
@@ -23,9 +48,9 @@ if ~isempty(serialportlist)
 end
 
 % Configurar el puerto serial
-puerto    = 'COM5';              % Puerto serial donde está conectado el dispositivo
-baudios   = 115200;              % Velocidad de transmisión de datos
-sp        = serialport(puerto, baudios); % Crear el objeto de puerto serial
+puerto    = 'COM5';              
+baudios   = 115200;              
+sp        = serialport(puerto, baudios); 
 sp.Timeout = 1;                  % Timeout corto para evitar bloqueos largos
 flush(sp);                       % Limpiar cualquier dato previo en el puerto serial
 ```
