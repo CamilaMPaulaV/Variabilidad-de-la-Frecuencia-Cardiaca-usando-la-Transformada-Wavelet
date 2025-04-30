@@ -8,9 +8,12 @@ Para la medición del HVR se hizo uso de la transformada Wavelet continua, se re
 
 ## Respuesta en frecuencia del filtro IIR
 ![image](https://github.com/user-attachments/assets/926c7545-7ffc-4fc8-9072-1ca379b681ec)
+
 En esta imagen se observa la respuesta en frecuencia de un filtro IIR Butterworth pasabanda. Este tipo de filtro se caracteriza por presentar una respuesta suave y sin ondulaciones en la banda pasante, ideal para señales biomédicas, como lo es el caso de la señal ECG. El filtro diseñado permite el paso de frecuencias entre 0.5 Hz y 40 Hz, debido a que estas permiten eliminar el ruido generado por movimientos, fluctuaciones respiratorias o interferencia electromagnética. La ganancia dentro de la banda pasante es cercana a 0 dB, por lo cual las componentes útiles de la señal no se ven afectadas significativamente. Las pendientes pronunciadas fuera de la banda muestran una buena atenuación.
+
 ## Análisis HRV
 ![image](https://github.com/user-attachments/assets/60001634-f4af-4922-b0f7-8c5ff268ac97)
+
 En el primer gráfico se muestra la señal ECG filtrada, sobre la cual se destacan los picos R detectados que corresponden a los máximos del complejo QRS. La detección de estos picos es fundamental, ya que permiten calcular los intervalos RR, es decir, el tiempo que existe entre cada latido.
 
 En segundo gráfico representa los intervalos RR en el dominio del tiempo, mostrando su variabilidad latido a latido. La línea azul muestra cómo varía el tiempo entre latidos, mientras que la línea roja discontinua representa la media de los intervalos RR, que en este caso es de aproximadamente 844.65 ms. Esto sugiere una frecuencia cardíaca promedio cercana a 71 latidos por minuto, considerándose así normal. 
