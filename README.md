@@ -345,3 +345,6 @@ Published 30/04/25
 
 ## Referencias
 [1] MSD Manual, “Introducción al sistema nervioso autónomo,” MSD Manual Versión para público general. [En línea]. Disponible en: https://www.msdmanuals.com/es/hogar/enfermedades-cerebrales-medulares-y-nerviosas/trastornos-del-sistema-nervioso-aut%C3%B3nomo/introducci%C3%B3n-al-sistema-nervioso-aut%C3%B3nomo. [Accedido: 30-abr-2025].
+[2] Apta Vital Sport, “Qué es la variabilidad de la frecuencia cardíaca y su interpretación,” [En línea]. Disponible en: https://co.aptavs.com/articulos/variabilidad-de-la-frecuencia-cardiaca-e-intervalos-rr. [Accedido: 30-abr-2025].
+[3] Universidad Nacional Autónoma de México, “Sistema nervioso autónomo,” Portal Interactivo de Neurofisiología UNAM. [En línea]. Disponible en: https://virtual.cuautitlan.unam.mx/intar/?page_id=1108. [Accedido: 30-abr-2025].
+[4] MathWorks, “Continuous and Discrete Wavelet Transforms,” MathWorks Help Center. [En línea]. Disponible en: https://www.mathworks.com/help/wavelet/gs/continuous-and-discrete-wavelet-transforms.html. [Accedido: 30-abr-2025].
