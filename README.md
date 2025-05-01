@@ -44,7 +44,7 @@ La transformada wavelet puede ser:
 - Continua (CWT): proporciona redundancia y permite un análisis más detallado.
 
 - Discreta (DWT): más eficiente computacionalmente y suficiente para análisis de HRV.
-- 
+
 # Diagrama de flujo
 
 ![image](https://github.com/user-attachments/assets/54589cf3-9177-4621-adf8-9d11c475a009)
